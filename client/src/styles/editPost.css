@@ -1,0 +1,172 @@
+/* ================= PAGE ================= */
+.edit-post-page {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* ================= WRAPPER ================= */
+.edit-post-container {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ================= TITLE (MEDIUM STYLE) ================= */
+.edit-post-container h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+/* ================= FORM ================= */
+.edit-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ================= INPUTS (CLEAN MINIMAL STYLE) ================= */
+.edit-post-form input,
+.edit-post-form select,
+.edit-post-form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #111;
+  background: transparent;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+  transition: all 0.2s ease;
+}
+
+/* focus underline animation */
+.edit-post-form input:focus,
+.edit-post-form select:focus,
+.edit-post-form textarea:focus {
+  border-bottom: 1px solid #111;
+}
+
+/* ================= TITLE INPUT (BIG MEDIUM STYLE) ================= */
+.edit-post-form input.title-input {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+.edit-post-form input.title-input::placeholder {
+  color: #aaa;
+}
+
+/* ================= CATEGORY SELECT ================= */
+.edit-post-form select {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* ================= TEXTAREA (ARTICLE BODY) ================= */
+.edit-post-form textarea {
+  min-height: 450px;
+  font-size: 20px;
+  line-height: 1.8;
+  resize: none;
+  border-bottom: none;
+  padding-top: 10px;
+}
+
+/* placeholder style */
+.edit-post-form textarea::placeholder {
+  color: #bbb;
+  font-size: 18px;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+.edit-preview {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-height: 320px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= ACTION BAR (FLOATING STYLE) ================= */
+.edit-post-actions {
+  position: sticky;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border: 1px solid #eee;
+}
+
+/* ================= SAVE BUTTON ================= */
+.save-btn {
+  padding: 10px 18px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+/* ================= CANCEL BUTTON ================= */
+.cancel-btn {
+  padding: 10px 18px;
+  background: transparent;
+  color: #111;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+  border-color: #111;
+  transform: translateY(-1px);
+}
+
+/* ================= FOCUS EFFECT (PREMIUM TOUCH) ================= */
+.edit-post-form input:focus,
+.edit-post-form textarea:focus,
+.edit-post-form select:focus {
+  transform: scale(1.002);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .edit-post-container h2 {
+    font-size: 26px;
+  }
+
+  .edit-post-form input.title-input {
+    font-size: 30px;
+  }
+
+  .edit-post-form textarea {
+    font-size: 18px;
+    min-height: 350px;
+  }
+}

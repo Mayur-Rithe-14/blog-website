@@ -1,0 +1,191 @@
+.navbar {
+  background: white;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  height: 80px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  color: #5b5ceb;
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: #444;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #5b5ceb;
+}
+
+.nav-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.search-box {
+  display: flex;
+
+  align-items: center;
+
+  background: #f3f4f8;
+
+  padding: 10px 15px;
+
+  border-radius: 12px;
+
+  width: 260px;
+
+  gap: 10px;
+}
+
+.search-box input {
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  width: 100%;
+}
+
+.icon-btn {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #f4f4f4;
+
+  font-size: 18px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.write-btn {
+  background: #5b5ceb;
+
+  padding: 11px 22px;
+
+  border-radius: 10px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.write-btn:hover {
+  background: #4748d9;
+}
+
+.login-btn {
+  text-decoration: none;
+
+  color: #333;
+
+  font-weight: 600;
+}
+
+.avatar {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.logout-btn {
+  background: #ef4444;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 8px;
+}
+
+.mobile-btn {
+  display: none;
+
+  font-size: 24px;
+
+  background: none;
+}
+
+@media (max-width: 900px) {
+  .search-box {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    left: 0;
+
+    top: 80px;
+
+    width: 100%;
+
+    background: white;
+
+    display: none;
+
+    flex-direction: column;
+
+    padding: 30px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-btn {
+    display: block;
+  }
+}
