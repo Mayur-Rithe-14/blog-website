@@ -1,56 +1,109 @@
-# 📝 Blogify - MERN Stack Blogging Platform
+# ✨ Blogify - Modern MERN Blog Platform
 
-A modern, full-stack blogging platform built with the **MERN Stack** that enables users to create, edit, and share blog posts with a beautiful and responsive interface. Blogify includes authentication, image uploads, real-time comments, user profiles, and a clean Medium-inspired writing experience.
+A modern full-stack blogging platform built using the **MERN Stack** where users can register, authenticate, create blogs, upload images, edit posts, comment in real-time, and manage their personal profile.
+
+> Designed with a clean, Medium-inspired UI and deployed using **Vercel** (Frontend) and **Render** (Backend).
 
 ---
 
-## 🚀 Features
+## 🌐 Live Demo
 
-### 🔐 Authentication
+### 🚀 Frontend
+
+https://blog-website-git-main-mayur-rithe-s-projects.vercel.app
+
+### ⚙️ Backend API
+
+https://blogify-backend-d2j2.onrender.com
+
+---
+
+## 📸 Application Preview
+
+<p align="center">
+  <img src="./screenshots/home.png" width="45%">
+  <img src="./screenshots/article.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/create-post.png" width="45%">
+  <img src="./screenshots/edit-post.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/profile.png" width="45%">
+  <img src="./screenshots/register.png" width="45%">
+</p>
+
+---
+
+# 🚀 Features
+
+## Authentication
 
 - User Registration
-- Secure Login
+- User Login
 - JWT Authentication
 - Protected Routes
+- Logout
 
-### 📝 Blog Management
+---
 
-- Create Blog Posts
-- Edit Posts
-- Delete Posts
-- Upload Cover Images
-- Category Selection
+## Blog Management
+
+- Create Blog
+- Edit Blog
+- Delete Blog
+- View All Blogs
+- Read Full Article
 - Responsive Blog Cards
+- Category Support
 
-### 💬 Real-Time Comments
+---
 
-- Add Comments
-- Reply to Comments
-- Nested Comment Threads
-- Delete Own Comments
-- Socket.IO Real-Time Updates
+## Image Upload
 
-### 👤 User Profile
+- Upload cover image from device
+- Multer integration
+- Image preview before publishing
+- Images stored on server
 
-- Edit Username
+---
+
+## User Profile
+
+- Premium Instagram/Medium-inspired Profile UI
+- Update Username
 - Update Bio
 - Upload Profile Picture
-- View Personal Blog Posts
-- Instagram/Medium Inspired Profile Layout
+- View Personal Articles
+- Post Counter
 
-### 🔍 Search
+---
 
-- Search Blogs by Title
-- Instant Filtering
+## Comments
 
-### 🎨 UI/UX
+- Add Comments
+- View Comments
+- Real-time updates using Socket.io
 
-- Responsive Design
-- Modern Interface
-- Medium Inspired Editor
-- Beautiful Cards
-- Clean Typography
+---
+
+## Search
+
+- Search blogs by title
+- Instant filtering
+
+---
+
+## UI
+
+- Modern Responsive Design
 - Mobile Friendly
+- Medium-inspired Editor
+- Clean Typography
+- Smooth Animations
+- Premium Cards
 
 ---
 
@@ -59,10 +112,15 @@ A modern, full-stack blogging platform built with the **MERN Stack** that enable
 ## Frontend
 
 - React.js
-- React Router DOM
+- Vite
+- React Router
 - Axios
 - React Icons
+- Framer Motion
+- Socket.io Client
 - CSS3
+
+---
 
 ## Backend
 
@@ -70,38 +128,30 @@ A modern, full-stack blogging platform built with the **MERN Stack** that enable
 - Express.js
 - MongoDB
 - Mongoose
-
-## Authentication
-
-- JSON Web Token (JWT)
-- bcryptjs
-
-## File Upload
-
+- JWT Authentication
 - Multer
-
-## Real-Time
-
-- Socket.IO
+- Socket.io
+- bcryptjs
 
 ---
 
-# 📁 Project Structure
+## Deployment
 
-```text
-Blogify/
+- Frontend → Vercel
+- Backend → Render
+- Database → MongoDB Atlas
+
+---
+
+# 📂 Project Structure
+
+```
+blog-website/
 │
 ├── client/
 │   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   └── package.json
+│   ├── public/
+│   ├── package.json
 │
 ├── server/
 │   ├── config/
@@ -120,87 +170,65 @@ Blogify/
 
 # ⚙️ Installation
 
-## 1️⃣ Clone Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/blogify.git
+git clone https://github.com/YOUR_USERNAME/blog-website.git
 
-cd blogify
+cd blog-website
 ```
 
 ---
 
-## 2️⃣ Install Dependencies
-
-### Client
-
-```bash
-cd client
-
-npm install
-```
-
-### Server
-
-```bash
-cd ../server
-
-npm install
-```
-
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file inside the **server** folder.
-
-```env
-PORT=5000
-
-MONGO_URI=your_mongodb_connection_string
-
-JWT_SECRET=your_secret_key
-```
-
----
-
-# ▶️ Run the Project
-
-### Start Backend
+## Backend Setup
 
 ```bash
 cd server
 
-npm run dev
+npm install
 ```
 
-### Start Frontend
+Create `.env`
+
+```env
+PORT=5000
+
+MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+
+JWT_SECRET=YOUR_SECRET_KEY
+
+CLIENT_URL=http://localhost:5173
+```
+
+Run Backend
 
 ```bash
-cd client
-
 npm run dev
-```
-
-Visit:
-
-```text
-http://localhost:5173
 ```
 
 ---
 
-# 📸 Screenshots
+## Frontend Setup
 
-- 🏠 Home Page
-- 🔐 Login & Registration
-- ✍️ Create Blog
-- 📝 Edit Blog
-- 📖 Blog Details
-- 💬 Real-Time Comments
-- 👤 User Profile
-- 🔍 Search Blogs
-- 📱 Responsive Design
+```bash
+cd client
+
+npm install
+```
+
+Create `.env`
+
+```env
+VITE_API_URL=http://localhost:5000/api
+
+VITE_SOCKET_URL=http://localhost:5000
+```
+
+Run Frontend
+
+```bash
+npm run dev
+```
 
 ---
 
@@ -208,107 +236,82 @@ http://localhost:5173
 
 ## Authentication
 
-| Method | Endpoint             |
-| ------ | -------------------- |
-| POST   | `/api/auth/register` |
-| POST   | `/api/auth/login`    |
+```
+POST   /api/auth/register
+
+POST   /api/auth/login
+```
 
 ---
 
 ## Posts
 
-| Method | Endpoint         |
-| ------ | ---------------- |
-| GET    | `/api/posts`     |
-| GET    | `/api/posts/:id` |
-| POST   | `/api/posts`     |
-| PUT    | `/api/posts/:id` |
-| DELETE | `/api/posts/:id` |
+```
+GET     /api/posts
+
+GET     /api/posts/:id
+
+POST    /api/posts
+
+PUT     /api/posts/:id
+
+DELETE  /api/posts/:id
+```
 
 ---
 
 ## Comments
 
-| Method | Endpoint                |
-| ------ | ----------------------- |
-| GET    | `/api/comments/:postId` |
-| POST   | `/api/comments/:postId` |
-| DELETE | `/api/comments/:id`     |
-
----
-
-## Users
-
-| Method | Endpoint             |
-| ------ | -------------------- |
-| GET    | `/api/users/profile` |
-| PUT    | `/api/users/profile` |
-
----
-
-# 🖼 Image Upload
-
-Blogify uses **Multer** to upload:
-
-- Blog Cover Images
-- User Profile Images
-
-Uploaded files are stored inside:
-
-```text
-server/uploads/
 ```
+GET     /api/comments/:postId
 
-and served from:
-
-```text
-http://localhost:5000/uploads/
+POST    /api/comments/:postId
 ```
 
 ---
 
-# ⚡ Socket.IO Features
+## User
 
-- Live Comments
-- Instant Comment Updates
-- Delete Comment Events
-- Room-based Communication
+```
+GET     /api/users/profile
+
+PUT     /api/users/profile
+```
 
 ---
 
-# 🚀 Future Improvements
+# 🎯 Future Improvements
 
-- ❤️ Like System
-- 🔖 Bookmark Posts
-- 👥 Follow Users
+- ❤️ Like Posts
+- 🔖 Bookmark Articles
+- 👥 Follow Authors
 - 🌙 Dark Mode
-- 📊 Reading Analytics
+- 📊 Dashboard Analytics
 - 🏷 Tags
+- 📑 Rich Text Editor
 - 🔔 Notifications
-- 📱 Progressive Web App (PWA)
-- ✍ Rich Text Editor
-- ☁ Cloudinary Image Storage
-- 📧 Email Verification
-- 🔐 Forgot Password
-- 🔍 Advanced Search & Filters
+- 📱 Progressive Web App
+- 📤 Cloudinary Image Storage
+- 🔍 Advanced Search
+- 📈 Trending Articles
 
 ---
 
-# 📚 Learning Outcomes
+# 📈 Learning Outcomes
 
-This project demonstrates practical implementation of:
+This project demonstrates practical experience with:
 
-- React Hooks
-- Context API
+- MERN Stack Development
 - REST APIs
 - JWT Authentication
-- CRUD Operations
 - MongoDB Relationships
-- File Uploads using Multer
-- Socket.IO Integration
-- Responsive UI Design
+- File Upload using Multer
+- Socket.io
 - Protected Routes
-- MERN Stack Architecture
+- CRUD Operations
+- Deployment (Render + Vercel)
+- Responsive UI Design
+- Git & GitHub Workflow
 
 ---
 
@@ -316,26 +319,25 @@ This project demonstrates practical implementation of:
 
 **Mayur Rithe**
 
-**Full-Stack MERN Developer** passionate about building modern, responsive, and scalable web applications while continuously learning new technologies.
+GitHub:
+https://github.com/YOUR_GITHUB_USERNAME
 
-### Connect with Me
+LinkedIn:
+https://linkedin.com/in/YOUR_LINKEDIN
 
-- GitHub: https://github.com/yourusername
-- LinkedIn: https://linkedin.com/in/yourprofile
-- Portfolio: https://yourportfolio.com
-
----
-
-# 📄 License
-
-This project is licensed under the **MIT License**.
+Portfolio:
+https://YOUR_PORTFOLIO.com
 
 ---
 
 # ⭐ Support
 
-If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
+If you found this project helpful, consider giving it a ⭐ on GitHub!
 
-Your support motivates future improvements and helps others discover the project.
+---
 
-**Happy Coding! 🚀**
+## 📄 License
+
+This project is licensed under the MIT License.
+
+Feel free to use it for learning and personal projects.
