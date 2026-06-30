@@ -1,13 +1,13 @@
 import Hero from "../components/home/Hero";
 import BlogGrid from "../components/home/BlogGrid";
-import Newsletter from "../components/home/Newsletter";
+import NewsLetter from "../components/home/NewsLetter";
 
 function Home() {
   return (
     <>
       <Hero />
       <BlogGrid />
-      <Newsletter />
+      <NewsLetter />
     </>
   );
 }
