@@ -21,21 +21,36 @@ const app = express();
 // Create HTTP server
 const server = http.createServer(app);
 
-// Socket.io setup
+/// ================= ALLOWED ORIGINS =================
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://blog-website-git-main-mayur-rithe-s-projects.vercel.app",
+];
+
+// ================= SOCKET.IO =================
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: allowedOrigins,
     credentials: true,
   },
 });
 
-// ✅ Make io accessible in controllers
+// Make io accessible in controllers
 app.set("io", io);
 
-// ================= MIDDLEWARE =================
+// ================= EXPRESS CORS =================
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: function (origin, callback) {
+      // Allow requests with no origin (Postman, curl, etc.)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   }),
 );
