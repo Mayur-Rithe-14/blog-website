@@ -320,13 +320,13 @@ This project demonstrates practical experience with:
 **Mayur Rithe**
 
 GitHub:
-https://github.com/YOUR_GITHUB_USERNAME
+https://github.com/Mayur-Rithe-14
 
 LinkedIn:
-https://linkedin.com/in/YOUR_LINKEDIN
+https://www.linkedin.com/in/mayur-rithe/
 
 Portfolio:
-https://YOUR_PORTFOLIO.com
+https://personal-portfolio-1-cqic.onrender.com
 
 ---
 
