@@ -25,6 +25,8 @@ const server = http.createServer(app);
 const allowedOrigins = [
   "http://localhost:5173",
   "https://blog-website-git-main-mayur-rithe-s-projects.vercel.app",
+  "https://blog-website-flame-six.vercel.app",
+  "https://blog-website-eonql69et-mayur-rithe-s-projects.vercel.app",
 ];
 
 // ================= SOCKET.IO =================
