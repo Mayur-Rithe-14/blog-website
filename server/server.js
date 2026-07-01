@@ -22,12 +22,9 @@ const app = express();
 const server = http.createServer(app);
 
 /// ================= ALLOWED ORIGINS =================
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://blog-website-git-main-mayur-rithe-s-projects.vercel.app",
-  "https://blog-website-flame-six.vercel.app",
-  "https://blog-website-eonql69et-mayur-rithe-s-projects.vercel.app",
-];
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"].filter(
+  Boolean,
+);
 
 // ================= SOCKET.IO =================
 const io = new Server(server, {
@@ -43,8 +40,7 @@ app.set("io", io);
 // ================= EXPRESS CORS =================
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (Postman, curl, etc.)
+    origin(origin, callback) {
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.includes(origin)) {
