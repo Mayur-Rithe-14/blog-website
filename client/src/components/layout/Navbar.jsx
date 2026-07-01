@@ -1,5 +1,5 @@
 import {Link, useNavigate} from "react-router-dom";
-import {FiSearch, FiMenu, FiX} from "react-icons/fi";
+import {FiSearch} from "react-icons/fi";
 import {useState} from "react";
 import {useAuth} from "../../context/AuthContext";
 
@@ -7,7 +7,6 @@ function Navbar() {
   const navigate = useNavigate();
   const {user, logout, isAuthenticated} = useAuth();
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
 
   const handleLogout = () => {
@@ -78,10 +77,6 @@ function Navbar() {
               </Link>
             </>
           )}
-
-          <button className="mobile-btn" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX /> : <FiMenu />}
-          </button>
         </div>
       </div>
     </header>
