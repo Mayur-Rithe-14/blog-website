@@ -52,7 +52,7 @@ export const createPost = async (req, res) => {
 
     // Image uploaded with multer
     if (req.file) {
-      coverImage = `http://localhost:5000/uploads/${req.file.filename}`;
+      coverImage = `${process.env.SERVER_URL}/uploads/${req.file.filename}`;
     }
 
     const post = await Post.create({
