@@ -50,8 +50,9 @@ export const createPost = async (req, res) => {
 
     let coverImage = "";
 
+    // Image uploaded with multer
     if (req.file) {
-      coverImage = `${process.env.SERVER_URL}/uploads/${req.file.filename}`;
+      coverImage = `http://localhost:5000/uploads/${req.file.filename}`;
     }
 
     const post = await Post.create({
@@ -99,7 +100,7 @@ export const updatePost = async (req, res) => {
     post.category = category || post.category;
 
     if (req.file) {
-      post.coverImage = `${process.env.SERVER_URL}/uploads/${req.file.filename}`;
+      post.coverImage = `http://localhost:5000/uploads/${req.file.filename}`;
     }
 
     await post.save();
@@ -128,6 +129,7 @@ export const deletePost = async (req, res) => {
       });
     }
 
+    // Only owner can delete
     if (post.author.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         message: "Not authorized",
