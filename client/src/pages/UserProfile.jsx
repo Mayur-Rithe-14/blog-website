@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import api from "../api/axios";
 import "../styles/profile.css";
 
-const API = "http://localhost:5000";
+const SERVER_URL = import.meta.env.VITE_SOCKET_URL;
 
 function UserProfile() {
   const [user, setUser] = useState(null);
@@ -29,7 +29,11 @@ function UserProfile() {
       setBio(res.data.user.bio || "");
 
       if (res.data.user.profileImage) {
-        setPreview(API + res.data.user.profileImage);
+        if (res.data.user.profileImage.startsWith("http")) {
+          setPreview(res.data.user.profileImage);
+        } else {
+          setPreview(`${SERVER_URL}${res.data.user.profileImage}`);
+        }
       }
     } catch (err) {
       console.log(err);
@@ -53,6 +57,7 @@ function UserProfile() {
 
       fetchProfile();
     } catch (err) {
+      console.log(err);
       alert("Update failed");
     }
   };
@@ -68,7 +73,10 @@ function UserProfile() {
               preview ||
               `https://ui-avatars.com/api/?name=${user.username}&background=5B5CEB&color=fff`
             }
-            alt=""
+            alt={user.username}
+            onError={(e) => {
+              e.target.src = `https://ui-avatars.com/api/?name=${user.username}&background=5B5CEB&color=fff`;
+            }}
           />
 
           {editing && (
@@ -76,8 +84,9 @@ function UserProfile() {
               type="file"
               accept="image/*"
               onChange={(e) => {
-                setImage(e.target.files[0]);
+                if (!e.target.files.length) return;
 
+                setImage(e.target.files[0]);
                 setPreview(URL.createObjectURL(e.target.files[0]));
               }}
             />
