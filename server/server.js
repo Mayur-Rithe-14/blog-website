@@ -69,8 +69,6 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/users", userRoutes);
 
-app.use("/uploads", express.static("uploads"));
-
 // ================= SOCKET =================
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);

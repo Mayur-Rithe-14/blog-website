@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import BlogCardSkeleton from "../../loaders/BlogCardSkeleton";
 import api from "../../api/axios";
 import BlogCard from "./BlogCard";
 
@@ -28,7 +29,13 @@ function BlogGrid() {
     return (
       <section className="blogs">
         <div className="container">
-          <h2 className="loading">Loading...</h2>
+          <h2 className="section-title">Latest Blogs</h2>
+
+          <div className="blog-grid">
+            {[...Array(6)].map((_, index) => (
+              <BlogCardSkeleton key={index} />
+            ))}
+          </div>
         </div>
       </section>
     );

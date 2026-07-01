@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import EditPostSkeleton from "../loaders/EditPostSkeleton";
 import {useNavigate, useParams} from "react-router-dom";
 import api from "../api/axios";
 import "../styles/editPost.css";
@@ -90,7 +91,7 @@ function EditPost() {
     }
   };
 
-  if (fetching) return <p>Loading post...</p>;
+  if (fetching) return <EditPostSkeleton />;
 
   return (
     <section className="create-post">
@@ -135,8 +136,9 @@ function EditPost() {
               <img src={preview} className="cover-preview" />
             ) : formData.coverImage ? (
               <img
-                src={`http://localhost:5000${formData.coverImage}`}
+                src={formData.coverImage}
                 className="cover-preview"
+                alt="Cover Preview"
               />
             ) : null}
 

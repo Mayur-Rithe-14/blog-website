@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import ProfileSkeleton from "../loaders/ProfileSkeleton";
 import api from "../api/axios";
 import "../styles/profile.css";
 
@@ -29,11 +30,7 @@ function UserProfile() {
       setBio(res.data.user.bio || "");
 
       if (res.data.user.profileImage) {
-        if (res.data.user.profileImage.startsWith("http")) {
-          setPreview(res.data.user.profileImage);
-        } else {
-          setPreview(`${SERVER_URL}${res.data.user.profileImage}`);
-        }
+        setPreview(res.data.user.profileImage);
       }
     } catch (err) {
       console.log(err);
@@ -62,7 +59,7 @@ function UserProfile() {
     }
   };
 
-  if (!user) return <h2 className="loading">Loading...</h2>;
+  if (!user) return <ProfileSkeleton />;
 
   return (
     <section className="profile-page">

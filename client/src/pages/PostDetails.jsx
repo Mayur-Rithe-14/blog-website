@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useParams, useNavigate} from "react-router-dom";
+import PostDetailsSkeleton from "../loaders/PostDetailsSkeleton";
 import api from "../api/axios";
 import socket from "../socket";
 import {FiMessageCircle, FiTrash2} from "react-icons/fi";
@@ -187,7 +188,7 @@ function PostDetails() {
     );
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <PostDetailsSkeleton />;
   if (!post) return <p>Post not found</p>;
 
   const isAuthor =
