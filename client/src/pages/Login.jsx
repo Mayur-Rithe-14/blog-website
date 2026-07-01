@@ -4,7 +4,7 @@ import axios from "axios";
 import {useAuth} from "../context/AuthContext";
 import "../styles/auth.css";
 
-const API = "http://localhost:5000/api/auth";
+const API = import.meta.env.VITE_API_URL;
 
 function Login() {
   const navigate = useNavigate();
