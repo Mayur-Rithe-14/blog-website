@@ -50,9 +50,8 @@ export const createPost = async (req, res) => {
 
     let coverImage = "";
 
-    // Image uploaded with multer
     if (req.file) {
-      coverImage = `${process.env.SERVER_URL}/uploads/${req.file.filename}`;
+      coverImage = req.file.path;
     }
 
     const post = await Post.create({
@@ -100,7 +99,7 @@ export const updatePost = async (req, res) => {
     post.category = category || post.category;
 
     if (req.file) {
-      post.coverImage = `http://localhost:5000/uploads/${req.file.filename}`;
+      post.coverImage = req.file.path;
     }
 
     await post.save();

@@ -41,8 +41,7 @@ export const updateProfile = async (req, res) => {
     }
 
     if (req.file) {
-      // Store relative path
-      user.profileImage = `/uploads/${req.file.filename}`;
+      user.profileImage = req.file.path;
     }
 
     await user.save();
