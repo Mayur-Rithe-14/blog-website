@@ -34,7 +34,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post(`${API}/login`, formData);
+      const res = await axios.post(`${API}/auth/login`, formData);
       login(res.data.user, res.data.token);
       navigate("/");
     } catch (err) {
