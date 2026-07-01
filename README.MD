@@ -10,7 +10,7 @@ A modern full-stack blogging platform built using the **MERN Stack** where users
 
 ### 🚀 Frontend
 
-https://blog-website-git-main-mayur-rithe-s-projects.vercel.app
+https://blog-website-flame-six.vercel.app
 
 ### ⚙️ Backend API
 
