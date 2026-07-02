@@ -1,6 +1,33 @@
+import {useState} from "react";
+import api from "../../api/axios";
 import "../../styles/newsletter.css";
 
 function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    if (!email.trim()) return;
+
+    try {
+      setLoading(true);
+
+      const res = await api.post("/newsletter", {
+        email,
+      });
+
+      alert(res.data.message);
+
+      setEmail("");
+    } catch (err) {
+      alert(err.response?.data?.message || "Subscription failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="newsletter">
       <div className="container">
@@ -14,10 +41,18 @@ function Newsletter() {
             development tips directly in your inbox.
           </p>
 
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
-            <button type="submit">Subscribe</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Subscribing..." : "Subscribe"}
+            </button>
           </form>
         </div>
       </div>

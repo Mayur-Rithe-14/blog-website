@@ -47,8 +47,7 @@ function Login() {
   return (
     <section className="auth-page">
       <div className="auth-card">
-        <h2 className="logo">Blogify</h2>
-        <h1>Welcome Back 👋</h1>
+        <h1>Welcome Back</h1>
 
         <p>Login to continue.</p>
 

@@ -21,10 +21,6 @@ function Hero() {
             A place where thoughts become stories. Read articles from
             developers, designers and creators around the world.
           </p>
-
-          <Link to="/" className="hero-btn">
-            Explore Blogs
-          </Link>
         </div>
 
         <div className="hero-right">
