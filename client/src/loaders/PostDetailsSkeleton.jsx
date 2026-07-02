@@ -1,3 +1,5 @@
+import "../styles/Skeleton.css";
+
 function PostDetailsSkeleton() {
   return (
     <section className="post-details">
