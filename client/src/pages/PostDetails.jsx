@@ -16,7 +16,7 @@ function PostDetails() {
   const [replyTo, setReplyTo] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const currentUser = JSON.parse(sessionStorage.getItem("user"));
 
   // ================= POST =================
   useEffect(() => {
