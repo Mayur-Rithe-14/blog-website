@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 import api from "../api/axios";
 import BlogCard from "../components/home/BlogCard";
+import BlogGridSkeleton from "../loaders/BlogGridSkeleton";
 
 import "../styles/blog.css";
 
@@ -14,6 +15,8 @@ function SearchResults() {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      setLoading(true);
+
       try {
         const res = await api.get("/posts");
 
@@ -40,13 +43,7 @@ function SearchResults() {
   }, [query]);
 
   if (loading) {
-    return (
-      <section className="blogs">
-        <div className="container">
-          <h2>Searching...</h2>
-        </div>
-      </section>
-    );
+    return <BlogGridSkeleton />;
   }
 
   return (
