@@ -62,7 +62,7 @@ function Register() {
   return (
     <section className="auth-page">
       <div className="auth-card">
-        <h2 className="logo">Blogify</h2>
+        <h1 className="logo">Blogify</h1>
         <h1>Create Account</h1>
         <p>Join Blogify today.</p>
 

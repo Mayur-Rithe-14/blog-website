@@ -16,6 +16,14 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+.auth-card .logo {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #5b5ceb;
+  margin-bottom: 20px;
+}
+
 .auth-card h1 {
   text-align: center;
   margin-bottom: 10px;
