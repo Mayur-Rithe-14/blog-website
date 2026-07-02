@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useParams, useNavigate} from "react-router-dom";
 import PostDetailsSkeleton from "../loaders/PostDetailsSkeleton";
+import "../styles/skeleton.css";
 import api from "../api/axios";
 import socket from "../socket";
 import {FiMessageCircle, FiTrash2} from "react-icons/fi";

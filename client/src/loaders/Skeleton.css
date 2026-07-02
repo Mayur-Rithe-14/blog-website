@@ -33,3 +33,80 @@
   height: 16px;
   margin-top: 22px;
 }
+
+/* ================= POST DETAILS SKELETON ================= */
+
+.post-skeleton,
+.comments-skeleton {
+  background: #fff;
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 36px;
+  margin-bottom: 18px;
+}
+
+.skeleton-meta {
+  width: 180px;
+  height: 18px;
+  margin-bottom: 30px;
+}
+
+.skeleton-line {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 14px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.comments-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skeleton-comment {
+  width: 100%;
+  height: 80px;
+}
