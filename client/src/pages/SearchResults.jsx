@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 import api from "../api/axios";
 import BlogCard from "../components/home/BlogCard";
-import BlogGridSkeleton from "../loaders/BlogGridSkeleton";
+import BlogCardSkeleton from "../loaders/BlogCardSkeleton";
 
 import "../styles/blog.css";
 
@@ -43,7 +43,7 @@ function SearchResults() {
   }, [query]);
 
   if (loading) {
-    return <BlogGridSkeleton />;
+    return <BlogCardSkeleton />;
   }
 
   return (
